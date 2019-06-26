@@ -3,27 +3,39 @@
 const store = require('../store')
 
 const signUpSuccess = responseData => {
-  $('#signup-message').text('You signed-up successfully')
-  $('#signup-message').addClass('alert-success')
+  $('#message').text('You signed-up successfully')
+  $('#message').addClass('alert-success')
   $('form').trigger('reset')
 }
 
-const signUpFail = responseData => {
-  $('#signup-message').text('Something went wrong')
-  $('#signup-message').addClass('alert-danger')
+const signUpFail = () => {
+  $('#message').text('Something went wrong')
+  $('#message').addClass('alert-danger')
   $('form').trigger('reset')
 }
 
 const signInSuccess = responseData => {
-  $('#signin-message').text('You are now signed in!')
-  $('#signin-message').addClass('alert-success')
+  $('#message').text('You are now signed in!')
+  $('#message').addClass('alert-success')
   $('form').trigger('reset')
   store.user = responseData.user
 }
 
-const signInFail = responseData => {
-  $('#signin-message').text('Something went wrong')
-  $('#signin-message').addClass('alert-danger')
+const signInFail = () => {
+  $('#message').text('Something went wrong')
+  $('#message').addClass('alert-danger')
+  $('form').trigger('reset')
+}
+
+const signOutSuccess = () => {
+  $('#message').text('You are now signed out!')
+  $('#message').addClass('alert-success')
+  $('form').trigger('reset')
+}
+
+const signOutFail = () => {
+  $('#message').text('Something went wrong')
+  $('#message').addClass('alert-danger')
   $('form').trigger('reset')
 }
 
@@ -31,5 +43,7 @@ module.exports = {
   signUpSuccess,
   signUpFail,
   signInSuccess,
-  signInFail
+  signInFail,
+  signOutSuccess,
+  signOutFail
 }

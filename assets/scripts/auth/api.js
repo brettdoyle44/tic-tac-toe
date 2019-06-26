@@ -22,7 +22,18 @@ const signIn = formData => {
   })
 }
 
+const signOut = () => {
+  return $.ajax({
+    url: config.apiUrl + '/sign-out',
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
-  signIn
+  signIn,
+  signOut
 }

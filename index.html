@@ -17,12 +17,19 @@
       <h4>A game by Brett Doyle &copy;</h4>
       </header>
       <nav>
+        <div class="alert" role="alert" id="message">
+        </div>
         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#signinCollapse" aria-expanded="false" aria-controls="collapseExample">
     Sign-in
   </button>
+
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#signupCollapse" aria-expanded="false" aria-controls="collapseExample">
+  Sign-up
+</button>
+  <button id="sign-out" class="btn btn-primary">
+Sign-out
+</button>
         <div class="collapse" id="signinCollapse">
-          <div class="alert" role="alert" id="signin-message">
-        </div>
           <form id="sign-in" class="col-md-6 mb-5">
                   <h2>Sign-in</h2>
                   <input class="form-control mb-1" required type="email" name="credentials[email]" placeholder="Your email here">
@@ -31,12 +38,7 @@
                 </form>
 </div>
 
-<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#signupCollapse" aria-expanded="false" aria-controls="collapseExample">
-Sign-up
-</button>
 <div class="collapse" id="signupCollapse">
-  <div class="alert" role="alert" id="signup-message">
-</div>
   <form id="sign-up" class="col-md-6 mb-5">
         <h2>Sign-up</h2>
         <input class="form-control mb-1" required type="email" name="credentials[email]" placeholder="Your email here">
