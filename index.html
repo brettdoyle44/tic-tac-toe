@@ -16,6 +16,32 @@
       <h1>Welcome to Tic-Tac-Toe</h1>
       <h4>A game by Brett Doyle &copy;</h4>
       </header>
+      <nav>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#signinCollapse" aria-expanded="false" aria-controls="collapseExample">
+    Sign-in
+  </button>
+        <div class="collapse" id="signinCollapse">
+          <form id="sign-in" class="col-md-6 mb-5">
+                  <h2>Sign-in</h2>
+                  <input class="form-control mb-1" required type="email" name="credentials[email]" placeholder="Your email here">
+                  <input class="form-control mb-1" required type="password" name="credentials[password]" placeholder="Your password here">
+                  <button class="btn btn-primary" type="submit">Sign-in</button>
+                </form>
+</div>
+
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#signupCollapse" aria-expanded="false" aria-controls="collapseExample">
+Sign-up
+</button>
+<div class="collapse" id="signupCollapse">
+  <form id="sign-up" class="col-md-6 mb-5">
+        <h2>Sign-up</h2>
+        <input class="form-control mb-1" required type="email" name="credentials[email]" placeholder="Your email here">
+        <input class="form-control mb-1" required type="password" name="credentials[password]" placeholder="Your password here">
+        <input class="form-control mb-1" required type="password" name="credentials[password_confirmation]" placeholder="Your password here.. again">
+        <button class="btn btn-primary" type="submit">Sign-up</button>
+      </form>
+</div>
+      </nav>
 
       <section>
         <div class="bottom-border square" data-cell-index="0" id="square-one"></div>
