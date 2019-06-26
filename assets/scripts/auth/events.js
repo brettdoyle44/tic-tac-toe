@@ -29,8 +29,16 @@ const onSignOut = event => {
     .catch(ui.signOutFail)
 }
 
+const onQuickSignIn = event => {
+  event.preventDefault()
+  api.quickSignIn()
+    .then(ui.signInSuccess)
+    .catch(ui.signInFail)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
-  onSignOut
+  onSignOut,
+  onQuickSignIn
 }

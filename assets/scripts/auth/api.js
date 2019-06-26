@@ -32,8 +32,22 @@ const signOut = () => {
   })
 }
 
+const quickSignIn = () => {
+  return $.ajax({
+    url: config.apiUrl + '/sign-in',
+    data: {
+      'credentials': {
+        'email': 'brett@brett.com',
+        'password': 'brett'
+      }
+    },
+    method: 'POST'
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
-  signOut
+  signOut,
+  quickSignIn
 }
