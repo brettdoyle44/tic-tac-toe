@@ -2,9 +2,13 @@
 
 const store = require('../store')
 
-const newGameSuccess = () => {
+const board = require('../board')
+
+const newGameSuccess = responseData => {
   $('#message').text('A new game has been created')
   $('#message').addClass('alert-success')
+  board.game = responseData.game
+  console.log(board.game)
 }
 
 const newGameFail = () => {
