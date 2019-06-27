@@ -3,4 +3,10 @@
 const board = {
 }
 
-module.exports = board
+const move = {
+}
+
+module.exports = {
+  board,
+  move
+}

@@ -12,6 +12,18 @@ $(() => {
   // game events
   $('#new-game').on('click', gameEvents.onNewGame)
   $('.square').on('click', function () {
-    $(this).text('X')
+    const move = {game: {
+      cell: {
+        index: '',
+        value: ''
+      },
+      over: ''
+    }
+    }
+    move.game.cell.index = $('div').data('cell-index')
+    move.game.cell.value = $('div').data('cell-value')
+    move.game.over = false
+    console.log(move)
   })
+  // $('.square').on('click', gameEvents.onUpdateGame)
 })

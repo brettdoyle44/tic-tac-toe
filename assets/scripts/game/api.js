@@ -2,6 +2,8 @@
 
 const config = require('../config')
 
+const board = require('../board')
+
 const store = require('../store')
 
 const newGame = () => {
@@ -14,6 +16,18 @@ const newGame = () => {
   })
 }
 
+const updateGame = () => {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + board.game.id,
+    method: 'PATCH',
+    data: ,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  newGame
+  newGame,
+  updateGame
 }

@@ -10,6 +10,8 @@ const onNewGame = event => {
     .catch(ui.newGameFail)
 }
 
+
+
 module.exports = {
   onNewGame
 }
