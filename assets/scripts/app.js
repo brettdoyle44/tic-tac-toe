@@ -2,6 +2,8 @@
 
 const authEvents = require('./auth/events')
 const gameEvents = require('./game/events')
+const apiEvents = require('./game/api')
+const board = require('./board')
 
 $(() => {
   // auth events
@@ -11,19 +13,6 @@ $(() => {
   $('#quick-sign-in').on('click', authEvents.onQuickSignIn)
   // game events
   $('#new-game').on('click', gameEvents.onNewGame)
-  $('.square').on('click', function () {
-    const move = {game: {
-      cell: {
-        index: '',
-        value: ''
-      },
-      over: ''
-    }
-    }
-    move.game.cell.index = $('div').data('cell-index')
-    move.game.cell.value = $('div').data('cell-value')
-    move.game.over = false
-    console.log(move)
-  })
+  $('.square').on('click', gameEvents.onUpdateGame)
   // $('.square').on('click', gameEvents.onUpdateGame)
 })

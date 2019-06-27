@@ -16,11 +16,11 @@ const newGame = () => {
   })
 }
 
-const updateGame = () => {
+const updateGame = (data) => {
   return $.ajax({
     url: config.apiUrl + '/games/' + board.game.id,
     method: 'PATCH',
-    data: ,
+    data,
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
