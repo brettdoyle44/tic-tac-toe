@@ -11,7 +11,10 @@ $(() => {
   $('#quick-sign-in').on('click', authEvents.onQuickSignIn)
   // game events
   $('#new-game').on('click', gameEvents.onNewGame)
-  $('.square').on('click', function () {
-    $(this).text('X')
-  })
+  $('.square').on('click', gameEvents.onUpdateGame)
+  // $('.square').on('click', function () {
+  //   const square = $('.square').data('cell-index')
+  //   console.log(square)
+  // })
+  // $('.square').on('click', gameEvents.onUpdateGame)
 })

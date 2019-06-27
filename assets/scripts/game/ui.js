@@ -16,7 +16,21 @@ const newGameFail = () => {
   $('#message').addClass('alert-danger')
 }
 
+const updateGameSuccess = responseData => {
+  $('#message').text('Successful move')
+  $('#message').addClass('alert-success')
+  board.game = responseData.game
+  console.log(responseData)
+}
+
+const updateGameFail = () => {
+  $('#message').text('Something went wrong')
+  $('#message').addClass('alert-danger')
+}
+
 module.exports = {
   newGameSuccess,
-  newGameFail
+  newGameFail,
+  updateGameSuccess,
+  updateGameFail
 }
