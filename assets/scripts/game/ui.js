@@ -4,6 +4,8 @@ const store = require('../store')
 
 const board = require('../board')
 
+const gameLogic = require('../game-logic')
+
 const newGameSuccess = responseData => {
   $('#message').text('A new game has been created')
   $('#message').addClass('alert-success')
@@ -21,6 +23,7 @@ const updateGameSuccess = responseData => {
   $('#message').addClass('alert-success')
   board.game = responseData.game
   console.log(responseData)
+  gameLogic.winCondition()
 }
 
 const updateGameFail = () => {

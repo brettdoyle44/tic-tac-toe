@@ -2,6 +2,7 @@
 
 const api = require('./api')
 const ui = require('./ui')
+const gameLogic = require('../game-logic')
 
 const onNewGame = event => {
   event.preventDefault()
