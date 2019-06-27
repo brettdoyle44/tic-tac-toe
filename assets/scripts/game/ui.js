@@ -20,7 +20,7 @@ const updateGameSuccess = responseData => {
   $('#message').text('Successful move')
   $('#message').addClass('alert-success')
   board.game = responseData.game
-  console.log(board.game)
+  console.log(responseData)
 }
 
 const updateGameFail = () => {

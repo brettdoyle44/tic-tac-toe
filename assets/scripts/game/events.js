@@ -12,15 +12,16 @@ const onNewGame = event => {
 
 const onUpdateGame = event => {
   event.preventDefault()
-  const move = {game: {
-    cell: {
-    },
-    over: ''
+  const target = event.target
+  const move = {
+    game: {
+      cell: {
+        index: $(target).data('cell-index'),
+        value: $(target).data('cell-value')
+      },
+      over: false
+    }
   }
-  }
-  move.game.cell.index = $('.square').data('cell-index')
-  move.game.cell.value = $('.square').data('cell-value')
-  move.game.over = false
   api.updateGame(move)
     .then(ui.updateGameSuccess)
     .catch(ui.updateGameFail)
