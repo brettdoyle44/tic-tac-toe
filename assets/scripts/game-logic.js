@@ -61,6 +61,13 @@ const winCondition = function () {
   return false
 }
 
+const noMove = (current) => {
+  const game = board.game
+  if (game.cells[current] === '') {
+    return true
+  } return false
+}
+
 let currentPlayer = ''
 
 const switchUsers = () => {
@@ -83,5 +90,6 @@ module.exports = {
   winCondition,
   switchUsers,
   currentPlayer,
-  resetBoard
+  resetBoard,
+  noMove
 }

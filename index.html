@@ -42,12 +42,14 @@ Quick Sign-in
   Play Again?
   </button>
 
-        <div class="collapse" id="signinCollapse">
-          <form id="sign-in" class="col-md-6 mb-5">
-                  <h2>Sign-in</h2>
-                  <input class="form-control mb-1" required type="email" name="credentials[email]" placeholder="Your email here">
-                  <input class="form-control mb-1" required type="password" name="credentials[password]" placeholder="Your password here">
-                  <button class="btn btn-primary" type="submit">Sign-in</button>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#totalWinsCollapse" aria-expanded="false" aria-controls="collapseExample">
+  See Total Wins
+</button>
+
+        <div class="collapse" id="totalWinsCollapse">
+          <form id="total-wins" class="col-md-6 mb-5">
+                  <input class="form-control mb-1" required type="number" name="games[player_x][id]" placeholder="Your ID here...">
+                  <button class="btn btn-primary" type="submit">Get Wins</button>
                 </form>
 </div>
 

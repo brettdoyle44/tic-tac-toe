@@ -6,6 +6,7 @@ const gameLogic = require('../game-logic')
 
 const newGameSuccess = responseData => {
   $('#message').text('A new game has been created')
+  $('#message').removeClass('alert-danger')
   $('#message').addClass('alert-success')
   board.game = responseData.game
   console.log(board.game)
@@ -13,11 +14,13 @@ const newGameSuccess = responseData => {
 
 const newGameFail = () => {
   $('#message').text('Something went wrong')
+  $('#message').removeClass('alert-success')
   $('#message').addClass('alert-danger')
 }
 
 const updateGameSuccess = responseData => {
   $('#message').text('Successful move')
+  $('#message').removeClass('alert-danger')
   $('#message').addClass('alert-success')
   board.game = responseData.game
   console.log(responseData)
@@ -26,6 +29,7 @@ const updateGameSuccess = responseData => {
 
 const updateGameFail = () => {
   $('#message').text('Something went wrong')
+  $('#message').removeClass('alert-success')
   $('#message').addClass('alert-danger')
 }
 

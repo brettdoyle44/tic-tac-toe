@@ -23,21 +23,28 @@ const onPlayAgain = event => {
 const onUpdateGame = event => {
   event.preventDefault()
   const target = event.target
-  gameLogic.switchUsers()
-  $(target).data('cell-value', gameLogic.switchUsers)
-  $(target).text(gameLogic.switchUsers)
-  const move = {
-    game: {
-      cell: {
-        index: $(target).data('cell-index'),
-        value: $(target).data('cell-value')
-      },
-      over: gameLogic.winCondition()
+  const cellValue = $(target).data('cell-index')
+  if (gameLogic.noMove(cellValue) === true) {
+    gameLogic.switchUsers()
+    $(target).data('cell-value', gameLogic.switchUsers)
+    $(target).text(gameLogic.switchUsers)
+    const move = {
+      game: {
+        cell: {
+          index: $(target).data('cell-index'),
+          value: $(target).data('cell-value')
+        },
+        over: gameLogic.winCondition()
+      }
     }
+    api.updateGame(move)
+      .then(ui.updateGameSuccess)
+      .catch(ui.updateGameFail)
+  } else {
+    $('#message').text('Invalid move, try again')
+    $('#message').addClass('alert-danger')
+    $('#message').trigger('reset')
   }
-  api.updateGame(move)
-    .then(ui.updateGameSuccess)
-    .catch(ui.updateGameFail)
 }
 
 module.exports = {

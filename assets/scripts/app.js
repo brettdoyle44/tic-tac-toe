@@ -13,4 +13,5 @@ $(() => {
   $('#new-game').on('click', gameEvents.onNewGame)
   $('.square').on('click', gameEvents.onUpdateGame)
   $('#play-again').on('click', gameEvents.onPlayAgain)
+  $('#total-wins').on('submit', gameEvents.onTotalWins)
 })
