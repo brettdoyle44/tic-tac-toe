@@ -67,10 +67,11 @@ const winCondition = function () {
     $('#message').text('You win!')
     $('#message').addClass('alert-success')
     return true
-  } // else if ((board.game.cells[0] === 'X' || 'O') && (board.game.cells[1] === 'X' || 'O') && (board.game.cells[2] === 'X' || 'O') && (board.game.cells[3] === 'X' || 'O') && (board.game.cells[4] === 'X' || 'O') && (board.game.cells[5] === 'X' || 'O') && (board.game.cells[6] === 'X' || 'O') && (board.game.cells[7] === 'X' || 'O') && (board.game.cells[8] === 'X' || 'O')) {
-  //   $('#message').text('It\'s a tie!')
-  //   $('#message').addClass('alert-success')
-  //   return true
+  } else if ((board.game.cells[0] !== '') && (board.game.cells[1] !== '') && (board.game.cells[2] !== '') && (board.game.cells[3] !== '') && (board.game.cells[4] !== '') && (board.game.cells[5] !== '') && (board.game.cells[6] !== '') && (board.game.cells[7] !== '') && (board.game.cells[8] !== '')) {
+    $('#message').text('It\'s a tie!')
+    $('#message').addClass('alert-success')
+    return true
+  }
   return false
 }
 
@@ -91,15 +92,6 @@ const resetBoard = () => {
   $('.square').data('cell-value', '')
   $('.square').text('')
 }
-// const switchUsers = function () {
-//   let player = 'O'
-//   if (player === 'O') {
-//     player = 'X'
-//   } else {
-//     player = 'O'
-//   }
-//   return player
-// }
 
 module.exports = {
   winCondition,
