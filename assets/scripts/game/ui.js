@@ -18,6 +18,19 @@ const newGameFail = () => {
   $('#message').addClass('alert-danger')
 }
 
+const totalPlayedSuccess = responseData => {
+  $('#message').text(`You have played ${responseData.games.length} games`)
+  $('#message').removeClass('alert-danger')
+  $('#message').addClass('alert-success')
+  console.log(responseData)
+}
+
+const totalPlayedFail = () => {
+  $('#message').text('You must login to get your total played games')
+  $('#message').removeClass('alert-success')
+  $('#message').addClass('alert-danger')
+}
+
 const updateGameSuccess = responseData => {
   $('#message').text('Successful move')
   $('#message').removeClass('alert-danger')
@@ -37,5 +50,7 @@ module.exports = {
   newGameSuccess,
   newGameFail,
   updateGameSuccess,
-  updateGameFail
+  updateGameFail,
+  totalPlayedFail,
+  totalPlayedSuccess
 }

@@ -3,6 +3,7 @@
 const api = require('./api')
 const ui = require('./ui')
 const gameLogic = require('../game-logic')
+const getFormFields = require('./../../../lib/get-form-fields')
 
 const onNewGame = event => {
   event.preventDefault()
@@ -18,6 +19,13 @@ const onPlayAgain = event => {
   api.playAgain()
     .then(ui.newGameSuccess)
     .catch(ui.newGameFail)
+}
+
+const onTotalPlayed = event => {
+  event.preventDefault()
+  api.totalPlayed()
+    .then(ui.totalPlayedSuccess)
+    .catch(ui.totalPlayedFail)
 }
 
 const onUpdateGame = event => {
@@ -50,5 +58,6 @@ const onUpdateGame = event => {
 module.exports = {
   onNewGame,
   onUpdateGame,
-  onPlayAgain
+  onPlayAgain,
+  onTotalPlayed
 }
