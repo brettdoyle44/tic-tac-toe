@@ -2,24 +2,108 @@
 
 const board = require('./board')
 
+// const gameTie = function () {
+//   const checkFullArray = board.game.cells.filter(string => string === 'X' || 'O')
+//   if (checkFullArray.length === 8) {
+//     return true
+//   } return false
+// }
+
+// const isTie = function () {
+//   if (board.game.cells[0] === 'X' || 'O' && board.game.cells[1] === 'X' || 'O' && board.game.cells[2] === 'X' || 'O' && board.game.cells[3] === 'X' || 'O' && board.game.cells[4] === 'X' || 'O' && board.game.cells[5] === 'X' || 'O' && board.game.cells[6] === 'X' || 'O' && board.game.cells[7] === 'X' || 'O' && board.game.cells[8] === 'X' || 'O') {
+//     $('#message').text('It\'s a tie!')
+//     $('#message').addClass('alert-success')
+//     return true
+//   }
+
 const winCondition = function () {
-  if ((board.game.cells[0] === board.game.cells[1]) && (board.game.cells[1] === board.game.cells[2])) {
+  if (board.game.cells[0] === 'X' && board.game.cells[1] === 'X' && board.game.cells[2] === 'X') {
     $('#message').text('You win!')
     $('#message').addClass('alert-success')
-  } else if ((board.game.cells[0] === board.game.cells[3]) && (board.game.cells[3] === board.game.cells[6])) {
-  } else if (board.game.cells[0] === board.game.cells[4] && board.game.cells[4] === board.game.cells[8]) {
-  } else if (board.game.cells[2] === board.game.cells[4] && board.game.cells[4] === board.game.cells[6]) {
-  } else if (board.game.cells[2] === board.game.cells[5] && board.game.cells[5] === board.game.cells[8]) {
-  } else if (board.game.cells[6] === board.game.cells[7] && board.game.cells[7] === board.game.cells[8]) {
+    $('')
+    return true
+  } else if (board.game.cells[0] === 'X' && board.game.cells[3] === 'X' && board.game.cells[6] === 'X') {
+    $('#message').text('You win!')
+    $('#message').addClass('alert-success')
+    return true
+  } else if (board.game.cells[0] === 'X' && board.game.cells[4] === 'X' && board.game.cells[8] === 'X') {
+    $('#message').text('You win!')
+    $('#message').addClass('alert-success')
+    return true
+  } else if (board.game.cells[2] === 'X' && board.game.cells[4] === 'X' && board.game.cells[6] === 'X') {
+    $('#message').text('You win!')
+    $('#message').addClass('alert-success')
+    return true
+  } else if (board.game.cells[2] === 'X' && board.game.cells[5] === 'X' && board.game.cells[8] === 'X') {
+    $('#message').text('You win!')
+    $('#message').addClass('alert-success')
+    return true
+  } else if (board.game.cells[6] === 'X' && board.game.cells[7] === 'X' && board.game.cells[8] === 'X') {
+    $('#message').text('You win!')
+    $('#message').addClass('alert-success')
+    return true
+    // check O's
+  } else if (board.game.cells[0] === 'O' && board.game.cells[1] === 'O' && board.game.cells[2] === 'O') {
+    $('#message').text('You win!')
+    $('#message').addClass('alert-success')
+    return true
+  } else if (board.game.cells[0] === 'O' && board.game.cells[3] === 'O' && board.game.cells[6] === 'O') {
+    $('#message').text('You win!')
+    $('#message').addClass('alert-success')
+    return true
+  } else if (board.game.cells[0] === 'O' && board.game.cells[4] === 'O' && board.game.cells[8] === 'O') {
+    $('#message').text('You win!')
+    $('#message').addClass('alert-success')
+    return true
+  } else if (board.game.cells[2] === 'O' && board.game.cells[4] === 'O' && board.game.cells[6] === 'O') {
+    $('#message').text('You win!')
+    $('#message').addClass('alert-success')
+    return true
+  } else if (board.game.cells[2] === 'O' && board.game.cells[5] === 'O' && board.game.cells[8] === 'O') {
+    $('#message').text('You win!')
+    $('#message').addClass('alert-success')
+    return true
+  } else if (board.game.cells[6] === 'O' && board.game.cells[7] === 'O' && board.game.cells[8] === 'O') {
+    $('#message').text('You win!')
+    $('#message').addClass('alert-success')
+    return true
+  } // else if ((board.game.cells[0] === 'X' || 'O') && (board.game.cells[1] === 'X' || 'O') && (board.game.cells[2] === 'X' || 'O') && (board.game.cells[3] === 'X' || 'O') && (board.game.cells[4] === 'X' || 'O') && (board.game.cells[5] === 'X' || 'O') && (board.game.cells[6] === 'X' || 'O') && (board.game.cells[7] === 'X' || 'O') && (board.game.cells[8] === 'X' || 'O')) {
+  //   $('#message').text('It\'s a tie!')
+  //   $('#message').addClass('alert-success')
+  //   return true
+  return false
+}
+
+let currentPlayer = ''
+
+const switchUsers = () => {
+  if (currentPlayer === '') {
+    currentPlayer = 'O'
+  } else if (currentPlayer === 'O') {
+    currentPlayer = 'X'
+  } else {
+    currentPlayer = 'O'
   }
+  return currentPlayer
 }
 
-const switchUsers = function () {
-  let userStart = 'X'
-
+const resetBoard = () => {
+  $('.square').data('cell-value', '')
+  $('.square').text('')
 }
+// const switchUsers = function () {
+//   let player = 'O'
+//   if (player === 'O') {
+//     player = 'X'
+//   } else {
+//     player = 'O'
+//   }
+//   return player
+// }
 
 module.exports = {
   winCondition,
-  switchUsers
+  switchUsers,
+  currentPlayer,
+  resetBoard
 }

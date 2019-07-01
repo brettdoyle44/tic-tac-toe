@@ -14,13 +14,16 @@ const onNewGame = event => {
 const onUpdateGame = event => {
   event.preventDefault()
   const target = event.target
+  gameLogic.switchUsers()
+  $(target).data('cell-value', gameLogic.switchUsers)
+  $(target).text(gameLogic.switchUsers)
   const move = {
     game: {
       cell: {
         index: $(target).data('cell-index'),
         value: $(target).data('cell-value')
       },
-      over: false
+      over: gameLogic.winCondition()
     }
   }
   api.updateGame(move)

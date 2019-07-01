@@ -23,7 +23,6 @@ const updateGameSuccess = responseData => {
   $('#message').addClass('alert-success')
   board.game = responseData.game
   console.log(responseData)
-  gameLogic.switchUsers()
   gameLogic.winCondition()
 }
 

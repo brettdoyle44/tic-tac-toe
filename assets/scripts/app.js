@@ -2,6 +2,7 @@
 
 const authEvents = require('./auth/events')
 const gameEvents = require('./game/events')
+const gameLogic = require('./game-logic')
 
 $(() => {
   // auth events
@@ -12,6 +13,7 @@ $(() => {
   // game events
   $('#new-game').on('click', gameEvents.onNewGame)
   $('.square').on('click', gameEvents.onUpdateGame)
+  $('#reset-game').on('click', gameLogic.resetBoard)
   // $('.square').on('click', function () {
   //   const square = $('.square').data('cell-index')
   //   console.log(square)
