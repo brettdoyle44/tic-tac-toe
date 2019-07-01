@@ -36,9 +36,19 @@ const onQuickSignIn = event => {
     .catch(ui.signInFail)
 }
 
+const onChangePass = event => {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.changePass(formData)
+    .then(ui.changePassSuccessful)
+    .catch(ui.changePassFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
-  onQuickSignIn
+  onQuickSignIn,
+  onChangePass
 }

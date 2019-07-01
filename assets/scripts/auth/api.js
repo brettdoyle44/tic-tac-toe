@@ -45,9 +45,22 @@ const quickSignIn = () => {
   })
 }
 
+const changePass = formData => {
+  console.log(formData)
+  return $.ajax({
+    url: config.apiUrl + '/change-password',
+    data: formData,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
-  quickSignIn
+  quickSignIn,
+  changePass
 }

@@ -14,4 +14,5 @@ $(() => {
   $('.square').on('click', gameEvents.onUpdateGame)
   $('#play-again').on('click', gameEvents.onPlayAgain)
   $('#total-played').on('click', gameEvents.onTotalPlayed)
+  $('#change-password').on('submit', authEvents.onChangePass)
 })

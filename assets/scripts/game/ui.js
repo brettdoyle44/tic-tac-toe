@@ -21,7 +21,8 @@ const newGameFail = () => {
 const totalPlayedSuccess = responseData => {
   $('#message').text(`You have played ${responseData.games.length} games`)
   $('#message').removeClass('alert-danger')
-  $('#message').addClass('alert-success')
+  $('#message').removeClass('alert-success')
+  $('#message').addClass('alert-primary')
   console.log(responseData)
 }
 

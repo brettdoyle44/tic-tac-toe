@@ -23,6 +23,10 @@
     Sign-in
   </button>
 
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#passwordCollapse" aria-expanded="false" aria-controls="collapseExample">
+Reset Password
+</button>
+
   <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#signupCollapse" aria-expanded="false" aria-controls="collapseExample">
   Sign-up
 </button>
@@ -43,8 +47,17 @@ Quick Sign-in
   </button>
 
   <button class="btn btn-primary" id="total-played">
-  See Total Wins
+  See Total Games
 </button>
+
+<div class="collapse" id="passwordCollapse">
+  <form id="change-password" class="col-12">
+        <h2>Reset Password</h2>
+        <input class="form-control mb-1" required type="password" name="passwords[old]" placeholder="Old password...">
+        <input class="form-control mb-1" required type="password" name="passwords[new]" placeholder="New password...">
+        <button class="btn btn-primary" type="submit">Reset password</button>
+      </form>
+</div>
 
 <div class="collapse" id="signinCollapse">
   <form id="sign-in" class="col-12">

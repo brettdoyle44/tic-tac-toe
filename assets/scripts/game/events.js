@@ -3,7 +3,6 @@
 const api = require('./api')
 const ui = require('./ui')
 const gameLogic = require('../game-logic')
-const getFormFields = require('./../../../lib/get-form-fields')
 
 const onNewGame = event => {
   event.preventDefault()
@@ -33,16 +32,16 @@ const onUpdateGame = event => {
   const target = event.target
   const cellValue = $(target).data('cell-index')
   if (gameLogic.noMove(cellValue) === true) {
-    gameLogic.switchUsers()
     $(target).data('cell-value', gameLogic.switchUsers)
     $(target).text(gameLogic.switchUsers)
+    gameLogic.switchUsers()
     const move = {
       game: {
         cell: {
           index: $(target).data('cell-index'),
           value: $(target).data('cell-value')
         },
-        over: gameLogic.winCondition()
+        over: gameLogic.winCondition
       }
     }
     api.updateGame(move)
