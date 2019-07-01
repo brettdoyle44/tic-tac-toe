@@ -6,7 +6,16 @@ const gameLogic = require('../game-logic')
 
 const onNewGame = event => {
   event.preventDefault()
+  gameLogic.resetBoard()
   api.newGame()
+    .then(ui.newGameSuccess)
+    .catch(ui.newGameFail)
+}
+
+const onPlayAgain = event => {
+  event.preventDefault()
+  gameLogic.resetBoard()
+  api.playAgain()
     .then(ui.newGameSuccess)
     .catch(ui.newGameFail)
 }
@@ -33,5 +42,6 @@ const onUpdateGame = event => {
 
 module.exports = {
   onNewGame,
-  onUpdateGame
+  onUpdateGame,
+  onPlayAgain
 }

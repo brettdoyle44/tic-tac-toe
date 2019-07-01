@@ -1,7 +1,5 @@
 'use strict'
 
-const store = require('../store')
-
 const board = require('../board')
 
 const gameLogic = require('../game-logic')

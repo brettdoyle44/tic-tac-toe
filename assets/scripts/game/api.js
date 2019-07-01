@@ -16,6 +16,16 @@ const newGame = () => {
   })
 }
 
+const playAgain = () => {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const updateGame = (data) => {
   return $.ajax({
     url: config.apiUrl + '/games/' + board.game.id,
@@ -29,5 +39,6 @@ const updateGame = (data) => {
 
 module.exports = {
   newGame,
-  updateGame
+  updateGame,
+  playAgain
 }

@@ -2,20 +2,6 @@
 
 const board = require('./board')
 
-// const gameTie = function () {
-//   const checkFullArray = board.game.cells.filter(string => string === 'X' || 'O')
-//   if (checkFullArray.length === 8) {
-//     return true
-//   } return false
-// }
-
-// const isTie = function () {
-//   if (board.game.cells[0] === 'X' || 'O' && board.game.cells[1] === 'X' || 'O' && board.game.cells[2] === 'X' || 'O' && board.game.cells[3] === 'X' || 'O' && board.game.cells[4] === 'X' || 'O' && board.game.cells[5] === 'X' || 'O' && board.game.cells[6] === 'X' || 'O' && board.game.cells[7] === 'X' || 'O' && board.game.cells[8] === 'X' || 'O') {
-//     $('#message').text('It\'s a tie!')
-//     $('#message').addClass('alert-success')
-//     return true
-//   }
-
 const winCondition = function () {
   if (board.game.cells[0] === 'X' && board.game.cells[1] === 'X' && board.game.cells[2] === 'X') {
     $('#message').text('You win!')
