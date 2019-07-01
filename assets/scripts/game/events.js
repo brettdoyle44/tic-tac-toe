@@ -30,11 +30,11 @@ const onTotalPlayed = event => {
 const onUpdateGame = event => {
   event.preventDefault()
   const target = event.target
+  const userSwitched = gameLogic.switchUsers()
   const cellValue = $(target).data('cell-index')
   if (gameLogic.noMove(cellValue) === true) {
-    $(target).data('cell-value', gameLogic.switchUsers)
-    $(target).text(gameLogic.switchUsers)
-    gameLogic.switchUsers()
+    $(target).data('cell-value', userSwitched)
+    $(target).text(userSwitched)
     const move = {
       game: {
         cell: {
