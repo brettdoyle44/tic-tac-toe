@@ -1,13 +1,15 @@
 # **Tic-Tac-Toe**
 A game by Brett Doyle
 
+[Latest Deploy] (https://brettdoyle44.github.io/tic-tac-toe/)
+
 ## Intro
 
 Welcome to my tic tac toe project! This is my first ever project built using APIs and writing the javascript/jQuery logic from scratch. My goal will be to refactor to make the code DRYer and introduce some more Bootstrap to make the board and elements look better.
 
 ## List of Technologies Used
 
-* HTML 
+* HTML
 * CSS
 * Javascript
 * jQuery
