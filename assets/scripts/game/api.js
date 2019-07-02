@@ -2,8 +2,6 @@
 
 const config = require('../config')
 
-const board = require('../board')
-
 const store = require('../store')
 
 const newGame = () => {
@@ -38,7 +36,7 @@ const playAgain = () => {
 
 const updateGame = (data) => {
   return $.ajax({
-    url: config.apiUrl + '/games/' + board.game.id,
+    url: config.apiUrl + '/games/' + store.game.id,
     method: 'PATCH',
     data,
     headers: {

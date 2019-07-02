@@ -1,15 +1,16 @@
 'use strict'
 
-const board = require('../board')
-
+const store = require('../store')
 const gameLogic = require('../game-logic')
 
 const newGameSuccess = responseData => {
   $('#message').text('A new game has been created')
   $('#message').removeClass('alert-danger')
   $('#message').addClass('alert-success')
-  board.game = responseData.game
-  console.log(board.game)
+  store.game = responseData.game
+  console.log(store.game)
+  store.currentPlayer = 'X'
+  store.winner = false
 }
 
 const newGameFail = () => {
@@ -32,11 +33,25 @@ const totalPlayedFail = () => {
   $('#message').addClass('alert-danger')
 }
 
+// const updateGameSuccess = responseData => {
+//   if (store.winner === true) {
+//     $('#message').text(`Player ${store.currentPlayer}`)
+//     $('#message').addClass('alert-success')
+//   } else {
+//     $('#message').text('Successful move')
+//     $('#message').removeClass('alert-danger')
+//     $('#message').addClass('alert-success')
+//     store.game = responseData.game
+//     console.log(responseData)
+//     console.log(store.winner)
+//   }
+// }
+
 const updateGameSuccess = responseData => {
   $('#message').text('Successful move')
   $('#message').removeClass('alert-danger')
   $('#message').addClass('alert-success')
-  board.game = responseData.game
+  store.game = responseData.game
   console.log(responseData)
   gameLogic.winCondition()
 }
