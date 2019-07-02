@@ -1,7 +1,7 @@
 # **Tic-Tac-Toe**
 A game by Brett Doyle
 
-[Latest Deploy] (https://brettdoyle44.github.io/tic-tac-toe/)
+[Latest Deploy](https://brettdoyle44.github.io/tic-tac-toe/)
 
 ## Intro
 
