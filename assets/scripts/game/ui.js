@@ -8,9 +8,7 @@ const newGameSuccess = responseData => {
   $('#message').removeClass('alert-danger')
   $('#message').addClass('alert-success')
   store.game = responseData.game
-  console.log(store.game)
   store.currentPlayer = 'X'
-  store.winner = false
 }
 
 const newGameFail = () => {
@@ -24,7 +22,6 @@ const totalPlayedSuccess = responseData => {
   $('#message').removeClass('alert-danger')
   $('#message').removeClass('alert-success')
   $('#message').addClass('alert-primary')
-  console.log(responseData)
 }
 
 const totalPlayedFail = () => {
@@ -33,26 +30,11 @@ const totalPlayedFail = () => {
   $('#message').addClass('alert-danger')
 }
 
-// const updateGameSuccess = responseData => {
-//   if (store.winner === true) {
-//     $('#message').text(`Player ${store.currentPlayer}`)
-//     $('#message').addClass('alert-success')
-//   } else {
-//     $('#message').text('Successful move')
-//     $('#message').removeClass('alert-danger')
-//     $('#message').addClass('alert-success')
-//     store.game = responseData.game
-//     console.log(responseData)
-//     console.log(store.winner)
-//   }
-// }
-
 const updateGameSuccess = responseData => {
   $('#message').text('Successful move')
   $('#message').removeClass('alert-danger')
   $('#message').addClass('alert-success')
   store.game = responseData.game
-  console.log(responseData)
   gameLogic.winCondition()
 }
 
