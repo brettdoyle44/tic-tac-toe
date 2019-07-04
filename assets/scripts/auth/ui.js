@@ -3,10 +3,12 @@
 const store = require('../store')
 
 const signUpSuccess = responseData => {
-  $('#message').text('You signed-up successfully')
+  $('#message').text('You signed-up successfully, please sign-in.')
   $('#message').removeClass('alert-danger')
   $('#message').addClass('alert-success')
   $('form').trigger('reset')
+  $('#signup-btn').hide()
+  $('#sign-up').hide()
 }
 
 const signUpFail = () => {
@@ -35,6 +37,14 @@ const signInSuccess = responseData => {
   $('#message').removeClass('alert-danger')
   $('#message').addClass('alert-success')
   $('form').trigger('reset')
+  $('#signup-btn').hide()
+  $('#sign-up').hide()
+  $('#signin-btn').hide()
+  $('#sign-in').hide()
+  $('#quick-sign-in').hide()
+  $('#new-game').show()
+  $('#password-btn').show()
+  $('#change-password').show()
   store.user = responseData.user
 }
 

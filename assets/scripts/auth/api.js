@@ -5,7 +5,6 @@ const config = require('../config')
 const store = require('../store')
 
 const signUp = formData => {
-  console.log(formData)
   return $.ajax({
     url: config.apiUrl + '/sign-up',
     data: formData,
@@ -14,7 +13,6 @@ const signUp = formData => {
 }
 
 const signIn = formData => {
-  console.log(formData)
   return $.ajax({
     url: config.apiUrl + '/sign-in',
     data: formData,
@@ -46,7 +44,6 @@ const quickSignIn = () => {
 }
 
 const changePass = formData => {
-  console.log(formData)
   return $.ajax({
     url: config.apiUrl + '/change-password',
     data: formData,

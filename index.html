@@ -12,98 +12,107 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <header>
-      <h1>Welcome to Tic-Tac-Toe</h1>
-      <h4>A game by Brett Doyle &copy;</h4>
+      <header class="container">
+        <div class="row">
+          <div class="col-12 pre-board-top"><h1>Welcome to Tic-Tac-Toe</h1></div>
+        </div>
+        <div class="row">
+          <div class="col-12 pre-board-top"><h4>A game by Brett Doyle &copy;</h4></div>
+        </div>
       </header>
       <nav>
         <div class="alert" role="alert" id="message">
         </div>
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#signinCollapse" aria-expanded="false" aria-controls="collapseExample">
+        <button class="btn btn-outline-light" type="button" data-toggle="collapse" data-target="#signinCollapse" aria-expanded="false" aria-controls="collapseExample" id="signin-btn">
     Sign-in
   </button>
 
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#passwordCollapse" aria-expanded="false" aria-controls="collapseExample">
-Reset Password
-</button>
-
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#signupCollapse" aria-expanded="false" aria-controls="collapseExample">
+  <button class="btn btn-outline-light" type="button" data-toggle="collapse" data-target="#signupCollapse" aria-expanded="false" aria-controls="collapseExample" id="signup-btn">
   Sign-up
 </button>
 
-  <button id="sign-out" class="btn btn-primary">
+  <button id="sign-out" class="btn btn-outline-light">
 Sign-out
 </button>
 
-<button id="quick-sign-in" class="btn btn-primary">
+<button id="quick-sign-in" class="btn btn-outline-light">
 Quick Sign-in
 </button>
 
-  <button id="new-game" class="btn btn-primary">
+  <button id="new-game" class="btn btn-outline-light">
   New Game
   </button>
-  <button id="play-again" class="btn btn-primary">
+
+  <button class="btn btn-outline-light" type="button" data-toggle="collapse" data-target="#passwordCollapse" aria-expanded="false" aria-controls="collapseExample" id="password-btn">
+Account
+</button>
+
+
+  <button id="play-again" class="btn btn-outline-light">
   Play Again?
   </button>
 
-  <button class="btn btn-primary" id="total-played">
+  <button class="btn btn-outline-light" id="total-played">
   See Total Games
-</button>
+  </button>
 
 <div class="collapse" id="passwordCollapse">
   <form id="change-password" class="col-12">
         <h2>Reset Password</h2>
         <input class="form-control mb-1" required type="password" name="passwords[old]" placeholder="Old password...">
         <input class="form-control mb-1" required type="password" name="passwords[new]" placeholder="New password...">
-        <button class="btn btn-primary" type="submit">Reset password</button>
+        <button class="btn btn-outline-light" type="submit">Reset password</button>
       </form>
 </div>
 
 <div class="collapse" id="signinCollapse">
-  <form id="sign-in" class="col-12">
+  <form id="sign-in" class="col-6">
         <h2>Sign-in</h2>
         <input class="form-control mb-1" required type="email" name="credentials[email]" placeholder="Your email here">
         <input class="form-control mb-1" required type="password" name="credentials[password]" placeholder="Your password here">
-        <button class="btn btn-primary" type="submit">Sign-in</button>
+        <button class="btn btn-outline-light" type="submit">Submit</button>
       </form>
 </div>
 
         <!-- <div class="collapse" id="totalWinsCollapse">
           <form id="total-played" class="col-12">
                   <input class="form-control mb-1" required type="number" min="0" name="games[player_x][id]" placeholder="Your ID here...">
-                  <button class="btn btn-primary" type="submit">Get Wins</button>
+                  <button class="btn btn-outline-light" type="submit">Get Wins</button>
                 </form>
 </div> -->
 
 <div class="collapse" id="signupCollapse">
-  <form id="sign-up" class="col-12">
+  <form id="sign-up" class="col-6 align-self-center">
         <h2>Sign-up</h2>
         <input class="form-control mb-1" required type="email" name="credentials[email]" placeholder="Your email here">
         <input class="form-control mb-1" required type="password" name="credentials[password]" placeholder="Your password here">
         <input class="form-control mb-1" required type="password" name="credentials[password_confirmation]" placeholder="Your password here.. again">
-        <button class="btn btn-primary" type="submit">Sign-up</button>
+        <button class="btn btn-outline-light" type="submit">Create Account</button>
       </form>
 </div>
       </nav>
-
-      <section>
-        <div data-cell-index="0" data-cell-value="" class="bottom-border square text-center"></div>
-        <div data-cell-index="1" data-cell-value="" class="three-side-top square text-center"></div>
-        <div data-cell-index="2" data-cell-value="" class="bottom-border square text-center"></div>
+<div class="container">
+      <section class="row">
+        <div data-cell-index="0" data-cell-value="" class="col-4 col-sm-3 bottom-border square text-center" id="sqr-zero"></div>
+        <div data-cell-index="1" data-cell-value="" class="col-4 col-sm-3 three-side-top square text-center" id="sqr-one"></div>
+        <div data-cell-index="2" data-cell-value="" class="col-4 col-sm-3 bottom-border square text-center" id="sqr-two"></div>
       </section>
+    </div>
 
-    <section>
-      <div data-cell-index="3" class="square text-center" data-cell-value=""></div>
-      <div data-cell-index="4" class="two-side square text-center" data-cell-value=""></div>
-      <div data-cell-index="5" class="square text-center" data-cell-value=""></div>
+<div class="container">
+    <section class="row">
+      <div data-cell-index="3" class="col-4 col-sm-3 square text-center" data-cell-value="" id="sqr-three"></div>
+      <div data-cell-index="4" class="col-4 col-sm-3 two-side square text-center" data-cell-value="" id="sqr-four"></div>
+      <div data-cell-index="5" class="col-4 col-sm-3 square text-center" data-cell-value="" id="sqr-five"></div>
     </section>
-
-    <section>
-      <div data-cell-index="6" class="top-border square text-center" data-cell-value=""></div>
-      <div data-cell-index="7" class="three-side-bottom square text-center" data-cell-value=""></div>
-      <div data-cell-index="8" class="top-border square text-center" data-cell-value=""></div>
+</div>
+<div class="container">
+    <section class="row">
+      <div data-cell-index="6" class="col-4 col-sm-3 top-border square text-center" data-cell-value="" id="sqr-six"></div>
+      <div data-cell-index="7" class="col-4 col-sm-3 three-side-bottom square text-center" data-cell-value="" id="sqr-seven"></div>
+      <div data-cell-index="8" class="col-4 col-sm-3 top-border square text-center" data-cell-value="" id="sqr-eight"></div>
     </section>
-
+</div>
 
     </body>
 </html>

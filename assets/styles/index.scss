@@ -1,5 +1,12 @@
 @import '~bootstrap/scss/bootstrap';
 
+body {
+  background: #C33764;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #1D2671, #C33764);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #1D2671, #C33764); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
 header {
   display: flex;
   flex-direction: column;
@@ -7,8 +14,14 @@ header {
   padding: 25px 0;
 }
 
+header.container {
+  margin-top: 25%;
+}
+
 h1,
+h2,
 h4 {
+  color: #ffffff;
   text-align: center;
 }
 
@@ -23,7 +36,23 @@ section {
 }
 
 .bottom-border {
-  border-bottom: 3px solid #000;
+  border-bottom: 3px solid #fff;
+}
+
+.col-sm-3:before {
+  content: '';
+  width: 0;
+}
+
+.col-sm-3:before {
+  white-space: normal;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+.col-sm-3:before {
+  padding-top: 100%;
 }
 
 .pad {
@@ -31,31 +60,32 @@ section {
 }
 
 .three-side-top {
-  border-bottom: 3px solid #000;
-  border-left: 3px solid #000;
-  border-right: 3px solid #000
+  border-bottom: 3px solid #fff;
+  border-left: 3px solid #fff;
+  border-right: 3px solid #fff;
 }
 
 .two-side {
-  border-left: 3px solid #000;
-  border-right: 3px solid #000;
+  border-left: 3px solid #fff;
+  border-right: 3px solid #fff;
 }
 
 .three-side-bottom {
-  border-top: 3px solid #000;
-  border-left: 3px solid #000;
-  border-right: 3px solid #000;
+  border-top: 3px solid #fff;
+  border-left: 3px solid #fff;
+  border-right: 3px solid #fff;
 }
 
 .top-border {
-  border-top: 3px solid #000;
+  border-top: 3px solid #fff;
 }
 
 .square {
-  display: flex;
-  flex-direction: row;
-  height: 150px;
-  justify-content: center;
-  padding: 0;
-  width: 150px;
+  font-size: 5em;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #fff;
+}
+
+.square-win {
+  color: #00FF00 !important;
 }

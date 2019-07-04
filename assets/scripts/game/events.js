@@ -33,7 +33,11 @@ const onUpdateGame = event => {
   event.preventDefault()
   const target = event.target
   const index = $(target).data('cell-index')
-  if (!store.game.cells[index]) {
+  if (!store.game.cells[index] && gameLogic.winCondition() === true) {
+    $('#message').text('Game is over, cannot make move.')
+    $('#message').addClass('alert-danger')
+    $('#message').trigger('reset')
+  } else if (!store.game.cells[index]) {
     $(target).text(store.currentPlayer)
     store.game.cells[index] = store.currentPlayer
     const move = {
@@ -48,6 +52,9 @@ const onUpdateGame = event => {
     api.updateGame(move)
       .then(ui.updateGameSuccess)
       .catch(ui.updateGameFail)
+    $('#message').text(`Successful move by player ${store.currentPlayer}`)
+    $('#message').removeClass('alert-danger')
+    $('#message').addClass('alert-success')
     gameLogic.switchUsers()
   } else {
     $('#message').text('Invalid move, try again')
