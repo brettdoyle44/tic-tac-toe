@@ -15,7 +15,8 @@ header {
 }
 
 header.container {
-  margin-top: 25%;
+  margin-top: 20%;
+  transition: margin-top 0.5s ease-in-out;
 }
 
 h1,
@@ -33,6 +34,10 @@ nav {
 section {
   display: flex;
   justify-content: center;
+}
+
+.ease-in {
+  transition: all 1s ease-in-out;
 }
 
 .bottom-border {
@@ -84,6 +89,7 @@ section {
   font-size: 5em;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #fff;
+  transition: all 1s ease-in-out;
 }
 
 .square-win {
@@ -103,4 +109,24 @@ section {
 #change-password {
   margin-left: 25%;
   margin-top: 15px;
+}
+
+#message {
+  transition: all 0.5s ease-in-out;
+}
+
+#new-game {
+  transition: all 0.5s ease-in-out;
+}
+
+#password-btn {
+  transition: all 0.5s ease-in-out;
+}
+
+#play-again {
+  transition: all 0.5s ease-in-out;
+}
+
+#total-played {
+  transition: all 0.5s ease-in-out;
 }
