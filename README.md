@@ -15,6 +15,13 @@ Welcome to my tic tac toe project! This is my first ever project built using API
 * jQuery
 * Bootstrap
 
+## Wireframes
+
+![](https://imgur.com/AUrLkon)
+![](https://imgur.com/0nZyDXZ)
+![](https://imgur.com/cGJXEiu)
+![](https://imgur.com/B8XpwRr)
+
 ## Planning
 
 My plan was to build the board first and then start on the API, then deal with the game locally, which I mostly accomplished. After getting the Auth and Game APIs working I started on the Game Logic and that took the most significant amount of time.
