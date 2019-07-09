@@ -17,10 +17,10 @@ Welcome to my tic tac toe project! This is my first ever project built using API
 
 ## Wireframes
 
-![](https://imgur.com/AUrLkon)
-![](https://imgur.com/0nZyDXZ)
-![](https://imgur.com/cGJXEiu)
-![](https://imgur.com/B8XpwRr)
+![](https://i.imgur.com/AUrLkon.jpg)
+![](https://imgur.com/0nZyDXZ.jpg)
+![](https://imgur.com/cGJXEiu.jpg)
+![](https://imgur.com/B8XpwRr.jpg)
 
 ## Planning
 

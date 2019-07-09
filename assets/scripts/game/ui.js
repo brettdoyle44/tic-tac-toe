@@ -13,6 +13,7 @@ const newGameSuccess = responseData => {
   $('#change-password').hide()
   $('#play-again').hide()
   $('#total-played').hide()
+  $('#sign-out').hide()
   $('.square').show()
   $('header.container').css('margin-top', '5%')
   store.game = responseData.game
@@ -45,6 +46,9 @@ const updateGameSuccess = responseData => {
   if (gameLogic.winCondition() === true) {
     $('#play-again').show()
     $('#total-played').show()
+    $('#password-btn').show()
+    $('#change-password').show()
+    $('#sign-out').show()
   }
 }
 

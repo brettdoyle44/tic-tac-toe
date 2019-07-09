@@ -59,7 +59,18 @@ const signOutSuccess = () => {
   $('#message').text('You are now signed out!')
   $('#message').removeClass('alert-danger')
   $('#message').addClass('alert-success')
-  $('form').trigger('reset')
+  $('#new-game').hide()
+  $('.square').hide()
+  $('#play-again').hide()
+  $('#total-played').hide()
+  $('#password-btn').hide()
+  $('#change-password').hide()
+  $('#sign-out').hide()
+  $('#sign-up').show()
+  $('#sign-in').show()
+  $('#signup-btn').show()
+  $('#signin-btn').show()
+  $('header.container').css('margin-top', '20%')
 }
 
 const signOutFail = () => {
