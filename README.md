@@ -16,11 +16,11 @@ Welcome to my tic tac toe project! This is my first ever project built using API
 * Bootstrap
 
 ## Wireframes
-
-<img src="https://i.imgur.com/AUrLkon.jpg" width="300">
-<img src="https://imgur.com/0nZyDXZ.jpg" width="300">
-<img src="https://imgur.com/cGJXEiu.jpg" width="300">
-<img src="https://imgur.com/B8XpwRr.jpg" width="300">
+|Intro Screen|Sign-in Dropdown|
+|------------|------------|
+|<img src="https://i.imgur.com/AUrLkon.jpg" width="300">|<img src="https://imgur.com/0nZyDXZ.jpg" width="300">|
+|Game Board Screen|Winner Screen|
+|<img src="https://imgur.com/cGJXEiu.jpg" width="300">|<img src="https://imgur.com/B8XpwRr.jpg" width="300">|
 
 ## Planning
 
