@@ -34,6 +34,4 @@ After creating the board, setting up the Authentication piece second helped me g
 
 ## Unsolved Problems
 
-* Freeze the board after the game is won.
-* Show/Hide elements based on a user flow.
 * Did not get to my northstar wireframes.
